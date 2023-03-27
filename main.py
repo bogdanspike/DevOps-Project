@@ -1,4 +1,4 @@
-import psycopg2
+import os
 from db_connection import names
 from flask import Flask, render_template
 

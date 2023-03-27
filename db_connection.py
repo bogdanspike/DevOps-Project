@@ -1,12 +1,14 @@
+import os
+
 import psycopg2
 
 names = []
 
-host = "msdocs-postgresql-server-120817074.postgres.database.azure.com"
-user = "azureuser@msdocs-postgresql-server-120817074"
-dbname = "mypgsqldb"
-password = "Pa133w0rD-120817074"
-sslmode = "require"
+host = os.environ['host']
+user = os.environ['user']
+dbname = os.environ['dbname']
+password = os.environ['password']
+sslmode = os.environ['sslmode']
 
 conn_string = "host={0} user={1} dbname={2} password={3} sslmode={4}".format(host, user, dbname, password, sslmode)
 conn = psycopg2.connect(conn_string)
